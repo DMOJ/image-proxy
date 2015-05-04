@@ -1,0 +1,24 @@
+{
+  "name": "image-proxy",
+  "version": "1.0.0",
+  "description": "Caching image proxy service for user generated content",
+  "main": "imageproxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DMOJ/image-proxy.git"
+  },
+  "author": "Don Mills Online Judge",
+  "license": "AGPLv3",
+  "bugs": {
+    "url": "https://github.com/DMOJ/image-proxy/issues"
+  },
+  "homepage": "https://github.com/DMOJ/image-proxy",
+  "dependencies": {
+    "nedb": "^1.1.2",
+    "request": "^2.55.0",
+    "yargs": "^3.8.0"
+  }
+}

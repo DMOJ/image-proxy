@@ -114,9 +114,11 @@ require('http').createServer(function (req, res) {
         }
         stream.write(data);
       }).on('end', function () {
-        console.log('Caching:', hash, 'type:', content_type);
-        typedb.update({_id: hash}, {_id: hash, type: content_type}, {upsert: true});
-        deliver_cache(res, hash, content_type);
+        stream.end(function () {
+           console.log('Caching:', hash, 'type:', content_type);
+           typedb.update({_id: hash}, {_id: hash, type: content_type}, {upsert: true});
+           deliver_cache(res, hash, content_type);
+        });
       });
     }).on('error', function (e) {
       res.writeHead(404, {'Content-Type': 'text/plain'});
